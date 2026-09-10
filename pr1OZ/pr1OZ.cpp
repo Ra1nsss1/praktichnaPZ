@@ -90,3 +90,18 @@ public:
         Character::Fight();
     }
 };
+int main() {
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+    Character* knight = new Knight();
+    knight->Fight();
+    cout << "\n--- Лицар змінює зброю на лук ---\n";
+    knight->SetWeapon(new BowBehavior());
+    knight->Fight();
+    cout << "\n--- Створення інших персонажів ---\n";
+    Character* troll = new Troll();
+    troll->Fight();
+    delete knight;
+    delete troll; 
+    return 0;
+}
